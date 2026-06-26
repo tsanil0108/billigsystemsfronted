@@ -1,0 +1,274 @@
+/* ─── Purchase Form ──────────────────────────────────────────── */
+
+.purchase-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Product Info Box ───────────────────────────────────────── */
+
+.product-info-box {
+  background: var(--gray-50);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin: 4px 0;
+}
+
+.product-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.product-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.product-info-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+/* ─── Form Hints ─────────────────────────────────────────────── */
+
+.form-hint {
+  font-size: 11.5px;
+  color: var(--gray-400);
+  margin-top: 3px;
+  font-style: italic;
+}
+
+/* ─── Purchase Summary ───────────────────────────────────────── */
+
+.purchase-summary {
+  background: var(--primary-light);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-top: 4px;
+}
+
+.purchase-summary h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0 0 10px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 13.5px;
+  color: var(--gray-600);
+}
+
+.summary-row.total {
+  border-top: 1px solid rgba(37, 99, 235, 0.15);
+  margin-top: 4px;
+  padding-top: 8px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.summary-row.total span:last-child {
+  color: var(--primary);
+  font-size: 15px;
+}
+
+.summary-row.stock-after {
+  border-top: 1px solid rgba(37, 99, 235, 0.15);
+  margin-top: 4px;
+  padding-top: 8px;
+  font-weight: 500;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .product-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .purchase-summary {
+    padding: 12px 14px;
+  }
+  
+  .summary-row {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  
+  .product-info-item {
+    padding: 4px 0;
+  }
+  
+  .product-info-label {
+    font-size: 10px;
+  }
+  
+  .product-info-value {
+    font-size: 12px;
+  }
+  
+  .purchase-summary {
+    padding: 10px 12px;
+  }
+  
+  .summary-row {
+    font-size: 12px;
+    padding: 3px 0;
+  }
+  
+  .summary-row.total span:last-child {
+    font-size: 13px;
+  }
+}
+
+/* ─── Form Input Overrides ───────────────────────────────────── */
+
+.purchase-form .form-input,
+.purchase-form .form-select,
+.purchase-form .form-textarea {
+  font-size: 13.5px;
+}
+
+.purchase-form .form-input:focus,
+.purchase-form .form-select:focus,
+.purchase-form .form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ─── Loading State ──────────────────────────────────────────── */
+
+.purchase-form .loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  z-index: 10;
+}
+
+/* ─── Modal Footer ───────────────────────────────────────────── */
+
+.purchase-form .modal-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.purchase-form .modal-footer .btn {
+  min-width: 120px;
+}
+
+@media (max-width: 480px) {
+  .purchase-form .modal-footer {
+    flex-direction: column;
+  }
+  
+  .purchase-form .modal-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ─── Animation ──────────────────────────────────────────────── */
+
+.product-info-box {
+  animation: slideDown 0.3s ease;
+}
+
+.purchase-summary {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─── Print Styles ───────────────────────────────────────────── */
+
+@media print {
+  .purchase-form .modal-footer {
+    display: none;
+  }
+  
+  .purchase-form .form-group .btn {
+    display: none;
+  }
+}
+
+/* ─── Dark Mode Support ──────────────────────────────────────── */
+
+[data-theme="dark"] .product-info-box {
+  background: var(--gray-800);
+  border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .purchase-summary {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: var(--primary-dark);
+}
+
+[data-theme="dark"] .purchase-summary h4 {
+  color: var(--gray-300);
+}
+
+[data-theme="dark"] .summary-row {
+  color: var(--gray-400);
+}
+
+[data-theme="dark"] .summary-row.total {
+  color: var(--gray-300);
+}
+
+[data-theme="dark"] .product-info-label {
+  color: var(--gray-400);
+}
+
+[data-theme="dark"] .product-info-value {
+  color: var(--gray-200);
+}

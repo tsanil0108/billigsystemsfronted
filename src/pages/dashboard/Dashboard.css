@@ -1,0 +1,269 @@
+.dashboard {
+  padding: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.invoice-number {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.amount {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.page-subtitle {
+  font-size: 13.5px;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+/* ─── Welcome Header ─────────────────────────────────────────── */
+
+.dashboard-welcome {
+  font-size: 13.5px;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+.dashboard-company {
+  margin-top: 2px !important;
+  font-size: 26px !important;
+}
+
+/* ─── Charts Grid ─────────────────────────────────────────────── */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  background: var(--gray-50);
+}
+
+/* ─── Donut Chart ─────────────────────────────────────────────── */
+
+.donut-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.donut-wrapper > div:first-child {
+  flex: 1;
+  min-width: 160px;
+}
+
+.donut-legend {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.donut-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.donut-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.donut-legend-label {
+  flex: 1;
+  color: var(--gray-600);
+}
+
+.donut-legend-value {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.donut-total {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+/* ─── Quick Actions ───────────────────────────────────────────── */
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.quick-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: left;
+}
+
+.quick-action:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.quick-action-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qa-blue { background: #EFF6FF; color: var(--primary); }
+.qa-green { background: #DCFCE7; color: var(--success); }
+.qa-orange { background: #FEF3C7; color: var(--warning); }
+.qa-purple { background: #EDE9FE; color: #7C3AED; }
+
+/* ─── Activity Feed ───────────────────────────────────────────── */
+
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.activity-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.activity-text {
+  flex: 1;
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+.activity-time {
+  font-size: 11.5px;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+
+.activity-amount {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-800);
+  white-space: nowrap;
+}
+
+.empty-state-text {
+  text-align: center;
+  color: var(--gray-400);
+  font-size: 13.5px;
+  padding: 24px 0;
+}

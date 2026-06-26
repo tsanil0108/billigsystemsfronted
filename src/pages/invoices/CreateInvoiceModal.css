@@ -1,0 +1,110 @@
+.invoice-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.items-section {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background: var(--gray-50);
+}
+
+.items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.items-table td {
+  padding: 8px 10px;
+}
+
+.items-table .form-select,
+.items-table .form-input {
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+/* ─── Dimension (L x W) inline inputs ──────────────────────────── */
+
+.dim-inputs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dim-inputs .dim-qty {
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.dim-inputs .dim-input {
+  min-width: 0;
+}
+
+.dim-x {
+  color: var(--gray-400);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.item-total {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.totals-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  width: 240px;
+  font-size: 13.5px;
+}
+
+.totals-label {
+  color: var(--gray-500);
+}
+
+.totals-value {
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+.totals-value.discount {
+  color: var(--danger);
+}
+
+.grand-total {
+  border-top: 2px solid var(--border);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.grand-total .totals-label {
+  font-weight: 700;
+  color: var(--gray-700);
+}
+
+.grand-total .totals-value {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .totals-row {
+    width: 100%;
+  }
+}

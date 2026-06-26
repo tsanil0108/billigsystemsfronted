@@ -1,0 +1,334 @@
+/* ─── Invoices Page ──────────────────────────────────────────── */
+
+.invoices-page {
+  padding: 0;
+}
+
+/* ─── Page Header ────────────────────────────────────────────── */
+
+.invoices-page .page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.invoices-page .page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.invoices-page .page-subtitle {
+  font-size: 14px;
+  color: var(--gray-500);
+  margin-top: 4px;
+}
+
+/* ─── Stats Grid ─────────────────────────────────────────────── */
+
+.invoices-page .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* ─── Card Header ────────────────────────────────────────────── */
+
+.invoices-page .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.invoices-page .card-header .search-bar {
+  min-width: 280px;
+  flex: 1;
+}
+
+.invoices-page .card-header .card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── Table Styles ───────────────────────────────────────────── */
+
+.invoices-page .table td {
+  padding: 12px 14px;
+  vertical-align: middle;
+}
+
+.invoice-number {
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.invoice-number:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.invoice-number.clickable {
+  cursor: pointer;
+}
+
+.amount {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+/* ─── Status Badges ──────────────────────────────────────────── */
+
+.status-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ─── Actions ────────────────────────────────────────────────── */
+
+.invoices-page .actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.invoices-page .actions .btn {
+  font-size: 11px;
+  padding: 4px 10px;
+  min-height: 28px;
+}
+
+/* ─── Loading State ──────────────────────────────────────────── */
+
+.invoices-page .loading-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* ─── Empty State ────────────────────────────────────────────── */
+
+.invoices-page .empty-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.invoices-page .empty-state .empty-icon {
+  font-size: 48px;
+  color: var(--gray-300);
+  margin-bottom: 12px;
+}
+
+.invoices-page .empty-state h3 {
+  font-size: 16px;
+  color: var(--gray-600);
+  margin: 0 0 4px 0;
+}
+
+.invoices-page .empty-state p {
+  color: var(--gray-400);
+  margin: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .invoices-page .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .invoices-page .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .invoices-page .page-header .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .invoices-page .card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .invoices-page .card-header .search-bar {
+    min-width: 100%;
+  }
+  
+  .invoices-page .card-header .card-actions {
+    justify-content: flex-end;
+  }
+  
+  .invoices-page .actions {
+    flex-wrap: wrap;
+  }
+  
+  .invoices-page .actions .btn {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .invoices-page .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .invoices-page .table td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  .invoices-page .table th {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  
+  .invoices-page .actions .btn {
+    font-size: 9px;
+    padding: 2px 6px;
+    min-height: 22px;
+  }
+  
+  .invoice-number {
+    font-size: 12px;
+  }
+  
+  .amount {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .invoices-page .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .invoices-page .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .invoices-page .table {
+    min-width: 600px;
+  }
+}
+
+/* ─── Print Styles ───────────────────────────────────────────── */
+
+@media print {
+  .invoices-page .page-header .btn {
+    display: none;
+  }
+  
+  .invoices-page .card-header .search-bar {
+    display: none;
+  }
+  
+  .invoices-page .card-header .card-actions {
+    display: none;
+  }
+  
+  .invoices-page .actions {
+    display: none;
+  }
+}
+
+/* ─── Animation ──────────────────────────────────────────────── */
+
+.invoices-page .stats-card {
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.invoices-page .stats-card:nth-child(1) { animation-delay: 0.05s; }
+.invoices-page .stats-card:nth-child(2) { animation-delay: 0.1s; }
+.invoices-page .stats-card:nth-child(3) { animation-delay: 0.15s; }
+.invoices-page .stats-card:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Hover Effects ──────────────────────────────────────────── */
+
+.invoices-page .table tr {
+  transition: background var(--transition);
+}
+
+.invoices-page .table tr:hover td {
+  background: var(--gray-50);
+}
+
+/* ─── Status Colors ──────────────────────────────────────────── */
+
+.invoices-page .badge-success {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.invoices-page .badge-warning {
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+.invoices-page .badge-danger {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.invoices-page .badge-info {
+  background: var(--info-light);
+  color: var(--info);
+}
+
+.invoices-page .badge-gray {
+  background: var(--gray-100);
+  color: var(--gray-600);
+}
+
+/* ─── Tooltip ────────────────────────────────────────────────── */
+
+.invoices-page [data-tooltip] {
+  position: relative;
+}
+
+.invoices-page [data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gray-900);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 10;
+}

@@ -1,0 +1,10 @@
+import toast from 'react-hot-toast';
+
+export const useToast = () => {
+  const showSuccess = (message) => toast.success(message);
+  const showError = (message) => toast.error(message);
+  const showInfo = (message) => toast(message);
+  const showLoading = (message) => toast.loading(message);
+
+  return { showSuccess, showError, showInfo, showLoading };
+};

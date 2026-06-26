@@ -1,0 +1,9 @@
+.invoice-number {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.amount {
+  font-weight: 600;
+  color: var(--gray-800);
+}

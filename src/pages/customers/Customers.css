@@ -1,0 +1,24 @@
+.customers-page .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.customers-page .card-header .search-bar {
+  min-width: 240px;
+}
+
+@media (max-width: 600px) {
+  .customers-page .card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customers-page .card-header .search-bar {
+    min-width: 100%;
+  }
+}

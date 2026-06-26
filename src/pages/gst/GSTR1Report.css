@@ -1,0 +1,53 @@
+.gstr1-report .summary-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.gstr1-report .summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.gstr1-report .summary-card.highlight {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.gstr1-report .summary-card.highlight .summary-label,
+.gstr1-report .summary-card.highlight .summary-value {
+  color: #fff;
+}
+
+.gstr1-report .summary-label {
+  display: block;
+  font-size: 11px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.gstr1-report .summary-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .gstr1-report .summary-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gstr1-report .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
