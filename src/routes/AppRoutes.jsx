@@ -23,6 +23,7 @@ import ProfitLoss from '../pages/reports/ProfitLoss';
 import Settings from '../pages/settings/Settings';
 import Subscription from '../pages/subscription/Subscription';
 import AdminPanel from '../pages/admin/AdminPanel';
+import Backup from '../pages/admin/backup/Backup';
 
 // Protected Route
 const ProtectedRoute = ({ children }) => {
@@ -66,11 +67,16 @@ export default function AppRoutes() {
         <Route path="reports/profit-loss" element={<ProfitLoss />} />
         <Route path="settings" element={<Settings />} />
         <Route path="subscription" element={<Subscription />} />
-        
-        {/* Admin Route */}
+
+        {/* Admin Routes (Super Admin only) */}
         <Route path="admin" element={
           <AdminRoute>
             <AdminPanel />
+          </AdminRoute>
+        } />
+        <Route path="admin/backup" element={
+          <AdminRoute>
+            <Backup />
           </AdminRoute>
         } />
       </Route>

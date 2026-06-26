@@ -91,6 +91,17 @@ const API = {
     NEEDS_ATTENTION: '/api/admin/payments/needs-attention',
     REFUND: (id) => `/api/admin/payments/${id}/refund`,
   },
+
+  // Backup (Super Admin only)
+  BACKUP: {
+    LIST: '/api/admin/backups',
+    CREATE: '/api/admin/backups',
+    DOWNLOAD: (id) => `/api/admin/backups/${id}/download`,
+    RESTORE: (id) => `/api/admin/backups/${id}/restore`,
+    DELETE: (id) => `/api/admin/backups/${id}`,
+    RESTORE_FILE: '/api/admin/backups/restore-file',
+    SCHEDULE: '/api/admin/backups/schedule',
+  },
 };
 
 export default API;

@@ -1,0 +1,309 @@
+/* ─── Backup Page ─────────────────────────────────────────── */
+.backup-page { padding: 0; }
+
+.backup-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .backup-grid { grid-template-columns: 1fr; }
+}
+
+/* Left column gap */
+.backup-left { display: flex; flex-direction: column; gap: 16px; }
+.backup-right { display: flex; flex-direction: column; gap: 16px; }
+
+/* Include options */
+.backup-include-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.backup-include-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+
+.backup-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--gray-800);
+  cursor: pointer;
+}
+
+.backup-checkbox-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.backup-btn-full { width: 100%; justify-content: center; }
+
+/* Restore note */
+.backup-restore-note {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.backup-restore-note code {
+  background: var(--gray-100);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Schedule */
+.schedule-row { margin-bottom: 14px; }
+
+.schedule-toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-800);
+  cursor: pointer;
+}
+
+.toggle-switch {
+  width: 44px;
+  height: 24px;
+  background: var(--gray-300);
+  border-radius: 999px;
+  position: relative;
+  transition: background 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: left 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+
+.toggle-switch.on { background: var(--primary); }
+.toggle-switch.on::after { left: 23px; }
+
+.schedule-freq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.schedule-freq label {
+  font-size: 12px;
+  color: var(--gray-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.schedule-freq select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  background: var(--surface);
+  color: var(--gray-900);
+  outline: none;
+}
+
+.schedule-freq select:focus { border-color: var(--primary); }
+
+/* Backup list */
+.backup-list { display: flex; flex-direction: column; gap: 1px; }
+
+.backup-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.backup-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.backup-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.backup-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 5px;
+}
+
+.backup-item-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.backup-item-size, .backup-item-time {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.backup-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.backup-tag {
+  font-size: 11px;
+  background: var(--gray-100);
+  color: var(--gray-600);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.backup-item-date {
+  font-size: 11px;
+  color: var(--gray-400);
+  margin-top: 6px;
+}
+
+.backup-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.backup-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--gray-600);
+  transition: all 0.15s;
+}
+.backup-action-btn:hover { background: var(--gray-100); color: var(--gray-900); }
+.backup-action-btn.restore { color: var(--primary); border-color: var(--primary); }
+.backup-action-btn.restore:hover { background: var(--primary); color: #fff; }
+.backup-action-btn.danger:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+.backup-action-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.backup-empty {
+  text-align: center;
+  color: var(--gray-400);
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+/* Progress overlay */
+.backup-progress-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backup-progress-box {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  width: 340px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.backup-progress-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 18px;
+}
+
+.backup-progress-bar-wrap {
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.backup-progress-bar {
+  height: 100%;
+  background: var(--primary-gradient, var(--primary));
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.backup-progress-pct {
+  font-size: 13px;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+/* Restore confirm modal */
+.backup-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backup-modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  width: 380px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.backup-modal-icon { font-size: 40px; margin-bottom: 12px; }
+
+.backup-modal h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 10px;
+}
+
+.backup-modal p {
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.backup-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}

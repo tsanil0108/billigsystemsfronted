@@ -145,3 +145,16 @@ export default {
   adminService,
   setupService,
 };
+// ─── Backup Service (Super Admin only) ──────────────────────
+export const backupService = {
+  getAll: () => api.get(API.BACKUP.LIST),
+  create: (data) => api.post(API.BACKUP.CREATE, data),
+  download: (id) => api.get(API.BACKUP.DOWNLOAD(id), { responseType: 'blob' }),
+  restore: (id) => api.post(API.BACKUP.RESTORE(id)),
+  delete: (id) => api.delete(API.BACKUP.DELETE(id)),
+  restoreFromFile: (formData) => api.post(API.BACKUP.RESTORE_FILE, formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  }),
+  getSchedule: () => api.get(API.BACKUP.SCHEDULE),
+  saveSchedule: (data) => api.put(API.BACKUP.SCHEDULE, data),
+};
